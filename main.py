@@ -19,7 +19,7 @@ def get_data(url, to_update):
 
 
 def series(page_count):
-    print("\n\nTv Shows Updating")
+    print("\n\nTv Shows Updating\n")
     
     with open('series.txt', 'bw') as f0:
         pass
@@ -39,7 +39,7 @@ def series(page_count):
             i = i
 
 def movies(page_count):
-    print("\n\nMovies Updating")
+    print("\n\nMovies Updating\n")
 
     with open('films.txt', 'bw') as f0:
         pass
@@ -64,7 +64,7 @@ def movies(page_count):
 try:
     what = argv[1].lower()
     if(what == "series"):
-        pages = int(input("""
+        pages = int(input("""\n
                         Enter page count for series available either on 
                             https://tinyzonetv.cc/tv-show, or
                             https://hdtoday.se/tv-show.
@@ -72,7 +72,7 @@ try:
                         """) or 405)
         series(pages)
     elif(what == "movies"):
-        pages = int(input("""
+        pages = int(input("""\n
                         Enter page count for movies available either on 
                             https://tinyzonetv.cc/movie, or
                             https://hdtoday.se/movie.
@@ -80,29 +80,32 @@ try:
                         """) or 1261)
         movies(pages)
     elif(what == "both"):
-        pages_series = int(input("""
+        pages_series = int(input("""\n
                         Enter page count for series available either on 
                             https://tinyzonetv.cc/tv-show, or
                             https://hdtoday.se/tv-show.
                             Default count is 405.
                         """) or 405)
-        series(pages_series)
-
-        pages_movies = int(input("""
+        
+        pages_movies = int(input("""\n
                         Enter page count for movies available either on 
                             https://tinyzonetv.cc/movie, or
                             https://hdtoday.se/movie.
                             Default count is 1261.
                         """) or 1261)
+        
+        series(pages_series)
+        
         movies(pages_movies)
+    
     else:
-        print("""
+        print("""\n\n
             Invalid argument.
             python main.py [argv]
             series: to update series list
             movies: to update movies list
             both: to update both
-    """)
+    \n\n""")
     
     print("\n\nUpdated!!!")
         
